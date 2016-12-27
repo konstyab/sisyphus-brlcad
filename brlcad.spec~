@@ -1,0 +1,357 @@
+Name: brlcad
+Version: 7.26.0.2
+Release: alt11
+
+Summary: BRL-CAD is a powerful open source cross-platform solid modeling system that includes interactive geometry editing, high-performance ray-tracing for rendering and geometric analysis, a system performance analysis benchmark suite, geometry libraries for application developers, and more than 30 years of active development.
+#BuildArch: i586
+License: LGPL
+Group: Engineering
+Url: https://brlcad.org/
+
+Packager: Sample Maintainer <samplemaintainer@altlinux.org>
+%filter_from_requires /^tcl.*/d
+BuildPreReq: cmake, rpm-macros-cmake, gcc5-c++, tcl-devel, tk, tklib, tcl-incrtcl-devel, tcl-incrtk-devel, tcl-togl-devel, tcl-trf-devel, tcl-blt-devel, tcl-iwidgets, tcl-img, tcl-dom-devel, libGL-devel, libX11-devel, libuuid-devel, libsocket-devel, libGLES-devel, libGLU-devel, libGLUT-devel, libGLee-devel, libGLw-devel, libQGLViewer-qt5-devel, qt5-gstreamer1-devel, libqtermwidget-qt5-devel, qt5-3d-devel, qt5-base-devel, qt5-connectivity-devel, qt5-declarative-devel, qt5-location-devel, qt5-multimedia-devel, qt5-phonon-devel, qt5-quick1-devel, qt5-quickcontrols2-devel, qt5-script-devel, qt5-sensors-devel, qt5-serialbus-devel, qt5-serialport-devel, qt5-speech-devel, qt5-svg-devel, qt5-tools-devel, qt5-wayland-devel, qt5-webchannel-devel, qt5-webengine-devel, qt5-webkit-devel, qt5-websockets-devel, qt5-x11extras-devel, qt5-xmlpatterns-devel, zlib-devel, bzlib-devel, lzlib-devel, libpng-devel, libpnglite-devel, libpng++-devel, libpcre-devel, libpcre2-devel, libpcrecpp-devel, libexpat-devel
+#BuildPreReq: cmake, rpm-macros-cmake, gcc5-c++, tcl-devel, tk, tklib, tcl-incrtcl-devel, tcl-incrtk-devel, tcl-togl-devel, tcl-trf-devel, tcl-blt-devel, tcl-iwidgets, tcl-img, tcl-dom-devel, libbullet-devel, libGL-devel, libX11-devel, libqt4-devel, libuuid-devel, libsocket-devel, libGLES-devel, libGLU-devel, libGLUT-devel, libGLee-devel, libGLw-devel
+BuildPreReq: libbullet-devel
+BuildPreReq: libGLES-devel
+BuildPreReq: libGLEW-devel
+BuildPreReq: lemon bison
+Source: %name-%version.tar
+Patch0: %name-rel-7-26-0-2.patch
+Patch1: %name-tcl-no-stack-check.patch
+Patch2: %name-menu-into-science.patch
+
+Requires: tcl tcl-blt tcl-dnotebook tcl-dp tcl-gpg tcl-img tcl-incrtcl tcl-iwidgets tcl-ldap tcl-memchan tcl-readline tcl-snack tcl-soap tcl-syslog tcl-tdom tcl-thread tcl-tile tcl-tix tcl-tktable tcl-tktray tcl-tktreectrl tcl-tkXwin tcl-tls tcl-togl tcl-trf tcl-udp tcl-vfs tcl-xmpp tcl-xslt tcl-zlib tcllib tclx tk
+#Requires: tcl-dom tcl-xml
+%description
+
+BRL-CAD is a powerful cross-platform Open Source combinatorial
+Constructive Solid Geometry (CSG) solid modeling system that
+includes interactive 3D solid geometry editing, high-performance
+ray-tracing support for rendering and geometric analysis,
+network-distributed framebuffer support, image and
+signal-processing tools, path-tracing and photon mapping
+support for realistic image synthesis, a system performance
+analysis benchmark suite, an embedded scripting interface, and
+libraries for robust high-performance geometric representation
+and analysis.
+
+
+For more than 20 years, BRL-CAD has been the primary tri-service
+solid modeling CAD system used by the U.S. military to model
+weapons systems for vulnerability and lethality analyses. The
+solid modeling system is frequently used in a wide range of
+military, academic, and industrial applications including in
+the design and analysis of vehicles, mechanical parts, and
+architecture. The package has also been used in radiation
+dose planning, medical visualization, computer graphics
+education, CSG concepts and modeling education, and system
+performance benchmark testing among other purposes.
+
+BRL-CAD supports a great variety of geometric representations
+including an extensive set of traditional CSG primitive
+implicit solids such as boxes, ellipsoids, cones, and tori,
+as well as explicit solids made from closed collections of
+Uniform B-Spline Surfaces, Non-Uniform Rational B-Spline
+(NURBS) surfaces, n-Manifold Geometry (NMG), and purely faceted
+mesh geometry. All geometric objects may be combined using
+boolean set-theoretic CSG operations including union,
+intersection, and difference.
+
+BRL-CAD has been under active development with a portability
+heritage that includes systems such as a DEC VAX-11/780
+running 4.3 BSD; DECStations running ULTRIX; Silicon Graphics
+3030, 4D "IRIS", O2, Onyx, and Origin systems running various
+versions of IRIX; Sun Microsystems Sun-3 and Sun-4 Sparcs
+running SunOS; the Cray 1, Cray X-MP, Cray Y-MP, and Cray 2
+running UNICOS; DEC Alpha AXP running OSF/1; Apple Macintosh
+II running A/UX; iPSC/860 Hypercube running NX/2; the Alliant
+FX/8, FX/80, and FX/2800; Gould/Encore SEL PowerNode6000/9000
+and NP1; NeXT workstations; IBM RS/6000; HPPA 9000/700
+running HPUX; Ardent/Stardent; Encore Multi-Max; and much more.
+
+BRL-CAD is a collection of more than 400 tools, utilities,
+and applications comprising more than a million lines of
+source code. The package is intentionally designed to be
+extensively cross-platform and is actively developed on
+and maintained for many common operating system environments
+including for BSD, Linux, Solaris, Mac OS X, and Windows
+among others. BRL-CAD is distributed in binary and source
+code form as free open source software (FOSS), provided
+under Open Source Initiative (OSI) approved license terms.
+
+Mike Muuss began the initial architecture and design of
+BRL-CAD back in 1979. Development as a unified package
+began in 1983. The first public release was made in 1984.
+BRL-CAD became an open source project on 21 December 2004.
+
+
+
+
+%prep
+%setup
+%patch0 -p0
+%patch1 -p0
+%patch2 -p0
+
+%build
+
+# tcl scripts start with #!/bin/sh. Replacing with #!/usr/bin/tclsh
+export excl_mark='!'
+mkdir tcl-origin
+for i in `find -iname "*.tcl"` src/tclscripts/rtwizard/rtwizard ; do
+  if test "x${i}" = "x*" ; then
+    break
+  fi
+  j=`basename "${i}"`
+  cp $i tcl-origin/
+  sed -e "s/^#${excl_mark}\/bin\/sh$/#${excl_mark}\/usr\/bin\/tclsh/g" tcl-origin/${j} > ${i}
+done
+
+
+# manually written configure script. Also can enable things one by one. Or manually call cmake.
+# can't install to /usr, it uses it's own libraries which would go into /usr/lib and potentially cause conflict (read next)
+#./configure --prefix=/usr/libexec/%%name --enable-all
+cmake -DBRLCAD_BUNDLED_LIBS=ON -DCMAKE_INSTALL_PREFIX=/usr/libexec/%name -DBRLCAD_ENABLE_QT=ON -DBRLCAD_OPTIMIZED_BUILD=ON -DBRLCAD_FLAGS_OPTIMIZATION=ON
+# to force prefix=/usr, run this:
+#cmake . -DBRLCAD_BUNDLED_LIBS=ON -DBRLCAD_ROOT_OVERRIDE=1
+# w/o force, cmake will tell this:
+############ BEGIN QUOTATION ######################################
+#  }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+#
+#  It is STRONGLY recommended that you DO NOT install BRL-CAD into /usr as
+#  BRL-CAD provides several libraries that may conflict with other libraries
+#  (e.g.  librt, libbu, libbn) on certain system configurations.
+#
+#  Since our libraries predate all those that we're known to conflict with and
+#  are at the very core of our geometry services and project heritage, we have
+#  no plans to change the names of our libraries at this time.
+#
+#  INSTALLING INTO /usr CAN MAKE A SYSTEM COMPLETELY UNUSABLE.  If you choose
+#  to continue installing into /usr, you do so entirely at your own risk.  You
+#  have been warned.
+#
+#  }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+#Call Stack (most recent call first):
+#  CMakeLists.txt:204 (message)
+#
+#
+#Pausing 15 seconds...
+#CMake Error at CMakeLists.txt:154 (_message):
+#  If you wish to proceed using /usr as your prefix, define
+#  BRLCAD_ROOT_OVERRIDE=1 for CMake
+############### END QUOTATION #######################################
+
+
+%make_build
+
+%install
+%makeinstall_std
+
+# it puts .bat. Make unexecutable
+chmod -x %buildroot/usr/libexec/%name/bin/mged.bat
+
+# create wrappers for binaries. Wrappers go into /usr/bin
+mkdir -p %buildroot/usr/bin
+pushd %buildroot/usr/libexec/%name/bin
+for i in * ; do
+  if test "x${i}" = "x*" ; then
+    break
+  fi
+  excl_mark='!'
+  j=`basename "${i}"`
+  case "${j}" in
+    # skip tclsh
+    tclsh*)
+      ;;
+    *.bat)
+      ;;
+    # and wish
+    wish*)
+      ;;
+    # copy .py files
+    *.py) cp "${i}" %buildroot/usr/bin/
+      ;;
+    # ssampview.tcl: make a copy adding "#!/usr/bin/tclsh" 1st line. Fix the original, too
+    ssampview.tcl)
+      echo "#${excl_mark}/usr/bin/tclsh" > %buildroot/usr/bin/${j}
+      cat ${i} >> %buildroot/usr/bin/${j}
+      chmod +x %buildroot/usr/bin/${j}
+      cat %buildroot/usr/bin/${j} > $i   # fix original too
+      ;;
+    # copy other tcl files
+    *.tcl)
+      cp "${i}" %buildroot/usr/bin/
+      ;;
+    # and create wrappers for others
+    *)
+      echo -en "#${excl_mark}/bin/bash\n/usr/libexec/%name/bin/${i} \"\$@\"\n" > %buildroot/usr/bin/${i}
+      chmod +x %buildroot/usr/bin/${i}
+      ;;
+  esac
+done
+popd
+
+# change "#!/bin/sh" to "#!/usr/bin/wish" in listed files, or it will cause error while checking
+mkdir wish-origin
+for i in %buildroot/usr/libexec/%name/lib/tk8.5/demos/browse %buildroot/usr/libexec/%name/lib/tk8.5/demos/hello %buildroot/usr/libexec/%name/lib/tk8.5/demos/ixset %buildroot/usr/libexec/%name/lib/tk8.5/demos/rmt %buildroot/usr/libexec/%name/lib/tk8.5/demos/rolodex %buildroot/usr/libexec/%name/lib/tk8.5/demos/square %buildroot/usr/libexec/%name/lib/tk8.5/demos/tcolor %buildroot/usr/libexec/%name/lib/tk8.5/demos/timer %buildroot/usr/libexec/%name/lib/tk8.5/demos/widget ; do
+  j=`basename "${i}"`
+  cp ${i} wish-origin/
+  excl_mark='!'
+  sed -e "s/^#${excl_mark}\/bin\/sh$/#${excl_mark}\/usr\/bin\/wish/g" wish-origin/${j} > ${i}
+done
+
+
+# binaries won't pass test with default mode. They have /usr/libexec/%%name/lib in RPATH
+RPM_VERIFY_ELF_METHOD="relaxed"
+
+mkdir -p %buildroot/usr/share/applications
+cp misc/debian/*.desktop %buildroot/usr/share/applications/
+mkdir -p %buildroot/usr/share/desktop-directories
+cp misc/debian/*.directory %buildroot/usr/share/desktop-directories/
+
+mkdir -p %buildroot/usr/share/icons/%name
+pushd misc/debian/icons
+for i in * ; do
+  cp -r $i %buildroot/usr/share/icons/%name/
+done
+popd
+
+
+# fix .desktop files
+pushd %buildroot/usr/share/applications
+for i in * ; do
+  if test "x${i}" = "x*" ; then
+    break
+  fi
+  sed -E -i.bak "s/^Icon=([-a-zA-Z0-9]*)\\s*\$/Icon=\\/usr\\/share\\/icons\\/%name\\/256x256\\/\\1.png/g" $i
+  rm ${i}.bak -fv
+  sed -E -i.bak "s/\\/usr\\/brlcad/\\/usr\\/libexec\\/brlcad/g" $i
+  rm ${i}.bak -fv
+done
+popd
+
+pushd %buildroot/usr/share/desktop-directories
+for i in * ; do
+  if test "x${i}" = "x*" ; then
+    break
+  fi
+  case $i in
+    brlcad-doc.directory)
+      ;;
+    *)
+      sed -E -i.bak "s/^Icon=([-a-zA-Z0-9]*)\\s*\$/Icon=\\/usr\\/share\\/icons\\/%name\\/256x256\\/\\1.png/g" $i
+      rm ${i}.bak -fv
+      sed -E -i.bak "s/\\/usr\\/brlcad/\\/usr\\/libexec\\/brlcad/g" $i
+      rm ${i}.bak -fv
+       ;;
+  esac
+done
+popd
+
+
+######################   COMMENT ########################
+cat <<thisalliscomment > /dev/null
+pushd %buildroot/usr/libexec/brlcad/lib/tk8.5/demos
+chmod +x square
+for i in *.tcl ; do
+  cp ${i} ${i}.orig
+  excl_mark='!'
+  echo -en "#${excl_mark}/usr/bin/tclsh\n" > ${i}
+  cat ${i}.orig >> $i
+  rm ${i}.orig
+  chmod +x $i
+done
+popd
+
+pushd %buildroot/usr/libexec/brlcad/share/doc/html/manuals/mged
+for i in *.sh *.tcl mug mug_camo ; do
+  chmod +x $i
+done
+popd
+
+pushd %buildroot/usr/libexec/brlcad/share/doc/mged_old
+chmod +x doit
+popd
+
+pushd %buildroot/usr/libexec/brlcad/share/sample_applications
+chmod +x *.tcl
+popd
+
+pushd %buildroot/usr/libexec/brlcad/share/tclscripts/geometree
+for i in GeometryBrowser.tcl pkgIndex.tcl ; do
+  cp $i ${i}.orig
+  excl_mark='!'
+  echo -en "\\n#${excl_mark}/usr/bin/tclsh\\n" > $i
+  cat ${i}.orig >> $i
+  rm ${i}.orig
+done
+chmod +x *.tcl
+popd
+
+pushd %buildroot/usr/libexec/brlcad/share/tclscripts/igraph
+for i in GraphEditor.tcl pkgIndex.tcl ; do
+  cp $i ${i}.orig
+  excl_mark='!'
+  echo -en "\\n#${excl_mark}/usr/bin/tclsh\\n" > $i
+  cat ${i}.orig >> $i
+  rm ${i}.orig
+done
+chmod +x *.tcl
+popd
+
+
+pushd %buildroot/usr/libexec/brlcad/share/tclscripts/rtwizard
+for i in *.tcl rtwizard; do
+  cp $i ${i}.orig
+  excl_mark='!'
+  echo -en "\\n#${excl_mark}/usr/bin/tclsh\\n" > $i
+  cat ${i}.orig >> $i
+  rm ${i}.orig
+done
+chmod +x *.tcl rtwizard
+popd
+
+pushd %buildroot/usr/libexec/brlcad/share/tclscripts
+for i in *.tcl tclIndex ; do
+  cp $i ${i}.orig
+  excl_mark='!'
+  echo -en "\\n#${excl_mark}/usr/bin/tclsh\\n" > $i
+  cat ${i}.orig >> $i
+  rm ${i}.orig
+done
+chmod +x tclIndex *.tcl
+popd
+
+thisalliscomment
+######################## COMMENT FINISHED ###############################
+
+mkdir -p %buildroot/etc/xdg/menus/applications-merged
+cp misc/debian/brlcad.menu.altnew %buildroot/etc/xdg/menus/applications-merged/brlcad.menu
+
+mkdir -p %buildroot/usr/share/mime/packages
+cp misc/debian/brlcad.xml %buildroot/usr/share/mime/packages/
+
+%find_lang %name
+
+
+
+
+%files -f %name.lang
+%doc AUTHORS ChangeLog NEWS BUGS CHANGES COPYING HACKING INSTALL README TODO OPTIONS
+### %%exclude is no longer needed sincew we avoid copying those files in upper script
+#%%exclude /usr/bin/tclsh
+#%%exclude /usr/bin/wish
+/usr/share/icons/%name
+/usr/libexec/%name
+/usr/share/applications/*
+/usr/share/desktop-directories/*
+/usr/bin/*
+/etc/xdg/menus/applications-merged/*
+/usr/share/mime/packages/*
+
+%changelog
+* Fri Dec 23 2016 Konstantin Yabochkin <samplemaintainer@altlinux.org> 7.26.0.2-alt11
+- initial build
+- add optimization cmake flag
+

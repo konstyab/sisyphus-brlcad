@@ -1,0 +1,12 @@
+diff -uraN src/other/tcl/generic/tclBasic.c src/other/tcl/generic/tclBasic.c
+--- src/other/tcl/generic/tclBasic.c	2016-08-09 09:47:07.000000000 +0300
++++ src/other/tcl/generic/tclBasic.c	2016-11-28 16:35:42.862334432 +0300
+@@ -327,6 +327,8 @@
+  * path for recursion.
+  */
+ 
++#define TCL_NO_STACK_CHECK
++
+ #if defined(TCL_NO_STACK_CHECK)
+ /*
+  * Stack check disabled: make them noops.

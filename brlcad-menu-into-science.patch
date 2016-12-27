@@ -1,0 +1,27 @@
+diff -uraN misc/debian/brlcad.menu.altnew misc/debian/brlcad.menu.altnew
+--- misc/debian/brlcad.menu.altnew	1970-01-01 03:00:00.000000000 +0300
++++ misc/debian/brlcad.menu.altnew	2016-12-03 02:25:16.583471943 +0300
+@@ -0,0 +1,23 @@
++<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
++    "http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd">
++
++<Menu>
++	<Name>Applications</Name>
++	<Menu>
++		<Name>Science</Name>
++		<Menu>
++			<Name>brlcad</Name>
++			<Directory>brlcad.directory</Directory>
++			<Include>
++				<Category>BRL-CAD</Category>
++			</Include>
++			<Menu>
++				<Name>brlcad-doc</Name>
++				<Directory>brlcad-doc.directory</Directory>
++				<Include>
++					<Category>BRL-CAD-doc</Category>
++				</Include>
++			</Menu>
++		</Menu>
++	</Menu>
++</Menu>
